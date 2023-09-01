@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --font_padrao: Arial, Helvetica, sans-serif;
+}
+
+main{
+    /* definindo um tamanho maximo da main */
+    max-width: 1000px;
+    /* centralizando */
+    position: relative;
+    margin: auto;
+}
+
+    /* fazendo os cards se posicionarem um na frente do outro horizontalmente */
+.cards_collection{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    
+}
+
+/* dependendo do tamanho os cards ficam centralizados, ou ficam alinhados para esquerda */
+@media screen and (max-width: 960px) {
+    .cards_collection{
+        justify-content: center;
+    }
+  }
+@media screen and (min-width: 961px) {
+    .texto {
+        justify-content: flex-start;
+    }
+  }
+  
+.cards{
+    /* formatando card */
+    margin: 80px 20px 0px 20px;
+    height: 448px;
+    width: 280px;
+    background-image: url(imagens/background_card_280.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 1px 1px 5px black ;
+    color: white;
+    text-align: left;
+}
+
+    /* configurando o simbolo que fica no meio do card */
+.cards img{
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 128px;
+    width: 128px;
+}
+
+    /* div responsavel por posicionar o texto dentro do card */
+.text_insideCards{
+    position: relative;
+    top: 43%;
+    margin: 0px 0px 0px 20px;
+}
+
+    /* formatando h1 dentro do card*/
+.cards .text_insideCards h1{
+    font-family: var(--font_padrao);
+    font-weight: 100;
+    padding: 0px 0px 10px 0px;
+    font-size: 1.5em;
+}
+
+    /* formatando h2 dentro do card */
+.cards .text_insideCards h2{
+    font-family: var(--font_padrao);
+    font-weight: 100;
+    font-size: 1em;
+}
+
+    /*adicionando calendario antes dos cards*/
+.cards .text_insideCards h2::before{
+    content: url(imagens/calendar.png);
+    padding-right: 0.8em;
+}
+
+    /*essa parte é responsavel pela data dentro do card*/
+.cards .text_insideCards h3{
+    font-family: var(--font_padrao);
+    font-weight: 100;
+    font-size: 1em;
+    text-indent: 2em;
+}
+
+    /*paragrafo do card*/
+.cards p{
+    padding: 20px 20px 10px 0px;
+    font-family: var(--font_padrao);
+    font-weight: 100;
+    text-align: justify;
+}
+
+    /*botao do card*/
+.card_button{
+    background-color: #dcf3f9;
+    margin: 35px 0px 0px 0px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: -10px;
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    color: #204963;
+    font-size: 1.2em;
+    font-weight: bold;
+}
